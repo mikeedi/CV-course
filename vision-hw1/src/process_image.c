@@ -85,17 +85,17 @@ void scale_image(image im, int c, float v)
 
 void clamp_image(image im)
 {
-    // TODO Fill this in
+
     for (int c=0; c<im.c; c++){
         for (int h=0; h<im.h; h++){
             for (int w=0; w<im.w; w++){
                 float v = get_pixel(im, w, h, c);
-                float clipped_v = v > 1.0 ? 1.0 : v;  
-                set_pixel(im, w, h, c, clipped_v);
+                v = v > 1.0 ? 1.0 : v;  
+                v = v < 0.0 ? 0.0 : v; 
+                set_pixel(im, w, h, c, v);
             }
         }
-    }
-    
+    }    
 }
 
 
