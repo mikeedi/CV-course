@@ -6,8 +6,6 @@
 .fuse*
 libuwimg*
 uwimg
-*.png
-*.jpg
 
 # OS Generated #
 .DS_Store*
